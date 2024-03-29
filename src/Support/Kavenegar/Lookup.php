@@ -26,7 +26,7 @@ class Lookup
             'template' => $template,
             ...$this->normalizeTokens($tokens),
         ];
-        $result = Http::asJson()->post($endpoint, $params);
+        $result = Http::asForm()->post($endpoint, $params);
         if (!$result->successful()) {
             $result->throw();
         }
