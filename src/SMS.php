@@ -18,12 +18,12 @@ class SMS
         $driver = $driver ?? config("sms.default");
         if (!$driver) throw new InvalidSettingException("sms driver should define in config");
         if (!array_key_exists($driver, $this->drivers)) {
-            if (!$driver) throw new InvalidSettingException("sms driver ($driver) not found.");
+            throw new InvalidSettingException("sms driver ($driver) not found.");
         }
 
-        $driveInstance = app($this->drivers[$driver], config("sms.$driver", array()));
+        $driveInstance = app($this->drivers[$driver], ['settings' => config("sms.$driver", array())]);
 
-        if ($callback){
+        if ($callback) {
             call_user_func($callback, $driveInstance);
         }
 
