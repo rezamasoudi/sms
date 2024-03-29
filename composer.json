@@ -1,0 +1,32 @@
+{
+  "name": "masoudi/sms",
+  "description": "Laravel package for send sms",
+  "authors": [
+    {
+      "name": "Reza Masoudi",
+      "email": "dev.masoudi@gmail.com"
+    }
+  ],
+  "keywords": [
+    "laravel",
+    "package",
+    "sms"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rezamasoudi/sms",
+  "autoload": {
+    "psr-4": {
+      "Masoudi\\SMS\\": "src/"
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^9.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Masoudi\\SMS\\SMSServiceProvider"
+      ]
+    }
+  }
+}
