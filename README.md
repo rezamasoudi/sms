@@ -41,8 +41,8 @@ use Masoudi\SMS\Facade\SMS;
 use Masoudi\SMS\Drivers\Kavenegar;
 
  SMS::driver(function (Kavenegar $kavenegar) {
-            $kavenegar->lookup('09123456789', "verify", ['%token' => '1234']);
-      });
+    $kavenegar->lookup('09123456789', "verify", ['%token' => '1234']);
+ });
 
 ```
 
