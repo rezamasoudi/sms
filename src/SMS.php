@@ -30,4 +30,9 @@ class SMS
         return $driveInstance;
     }
 
+    public function register(string $name, BaseSmsDriver $driver): void
+    {
+        $this->drivers[$name] = $driver;
+    }
+
 }
