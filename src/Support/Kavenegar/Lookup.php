@@ -23,9 +23,9 @@ class Lookup
         $endpoint = Str::replace(":token", $this->settings['token'], $this->settings['lookup_url']);
         $params = [
             'receptor' => $receiver,
-            'template' => $template,
-            ...$this->normalizeTokens($tokens),
+            'template' => $template
         ];
+        $params = array_merge($params, $this->normalizeTokens($tokens));
         $result = Http::asForm()->post($endpoint, $params);
         if (!$result->successful()) {
             $result->throw();
